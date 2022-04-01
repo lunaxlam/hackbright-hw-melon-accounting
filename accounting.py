@@ -22,7 +22,7 @@ def accounting_report(melon_cost, customer_orders_filepath):
 
         customer_ID = words[0]                     # stores customer ID number
         customer_name = words[1]                   # stores customer name
-        customer_melons = words[2]          # stores customer melon count
+        customer_melons = words[2]                 # stores customer melon count
         customer_paid = float(words[3])            # stores customer payment total
 
         # stores result of calculated customer expected payment total
