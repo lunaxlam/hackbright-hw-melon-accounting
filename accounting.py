@@ -32,17 +32,17 @@ def accounting_report(melon_cost, customer_orders_filepath):
         if customer_expected != customer_paid:
 
             # calculate customer payment status difference
-            underpaid = customer_expected - customer_paid
-            overpaid = customer_paid - customer_expected
+            balance_owed = customer_expected - customer_paid
+            refund = customer_paid - customer_expected
 
             # prints message detailing customer actual payment and expected payment status
             print(f"{customer_name.upper()}, ID# {customer_ID}\n{customer_name} paid ${customer_paid} for {customer_melons} melons, expected payment total: ${customer_expected:.2f}.")
 
             # prints underpaid or overpaid amount total depending on customer payment status
             if customer_paid < customer_expected:
-                print(f"Balance owed by customer: ${underpaid:.2f}.\n")
+                print(f"Balance owed by customer: ${balance_owed:.2f}.\n")
             else:
-                print(f"Refund owed to customer: ${overpaid:.2f}.\n")
+                print(f"Refund owed to customer: ${refund:.2f}.\n")
     
     # closes the file object
     customer_log.close()
